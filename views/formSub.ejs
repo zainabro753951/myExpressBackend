@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submitted</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          "poppins": ["Poppins", "sans-serif"]
+        },
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="w-full min-h-screen bg-black py-10 font-poppins">
+  <div class="w-[70%] h-full mx-auto bg-white">
+    <%- include("../common/header.ejs")%>
+    <div class="w-full h-full px-16 py-8">
+      <h2 class="text-[#78403e] text-2xl">Form Submitted successfully</h2>
+      <div class=" w-full border-b-2 px-8 bg-gray-200 border-black grid grid-cols-3 gap-5 justify-center py-5">
+        <% data.forEach((items) => {%>
+        <div class="flex flex-col gap-3">
+          <label class="py-2 bg-white px-3">Full Name :</label>
+          <label class="py-2 bg-white px-3">Place of Birth :</label>
+          <label class="py-2 bg-white px-3">Age :</label>
+          <label class="py-2 bg-white px-3">Full Address :</label>
+          <label class="py-2 bg-white px-3">Nationality :</label>
+          <label class="py-2 bg-white px-3">City/Country :</label>
+          <label class="py-2 bg-white px-3">Email :</label>
+          <label class="py-2 bg-white px-3">Phone Number :</label>
+        </div>
+        <div class="flex flex-col gap-3 col-span-2">
+          <p class="py-2 bg-gray-200 w-full px-3 bg-white"><%= items.fullName %></p>
+          <p class="py-2 bg-gray-200 w-full px-3 bg-white"><%= items.birthPlace%></p>
+          <p class="py-2 bg-gray-200 w-full px-3 bg-white"><%= items.age %></p>
+          <p class="py-2 bg-gray-200 w-full px-3 bg-white"><%= items.fullAddress %></p>
+          <p class="py-2 bg-gray-200 w-full px-3 bg-white"><%= items.nationality %></p>
+          <p class="py-2 bg-gray-200 w-full px-3 bg-white"><%= items.cityCountry %></p>
+          <p class="py-2 bg-gray-200 w-full px-3 bg-white"><%= items.email %></p>
+          <p class="py-2 bg-gray-200 w-full px-3 bg-white"><%= items.phonNum %></p>
+        </div>
+        <%}) %>
+      </div>
+      <%- include("../common/footer.ejs")%>
+    </div>
+</body>
+
+</html>

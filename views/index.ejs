@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          "poppins": ["Poppins", "sans-serif"]
+        },
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="w-full min-h-screen bg-black py-10 font-poppins">
+  <div class="w-[70%] h-full mx-auto bg-white">
+    <%- include("../common/header.ejs")%>
+    <div class="w-full h-full px-16 py-8">
+      <h2 class="text-[#78403e] text-2xl">Personal Information</h2>
+      <form action="/submit" method="post" class=" w-full border-b-2 border-black grid grid-cols-4 gap-5 justify-center py-5">
+        <div class="flex flex-col gap-3">
+          <label for="fullName" class=" py-2">Full Name :</label>
+          <label for="birthPlace" class="py-2">Place of Birth :</label>
+          <label for="age" class="py-2">Age :</label>
+          <label for="fullAddress" class="py-2">Full Address :</label>
+          <label for="nationality" class="py-2">Nationality :</label>
+          <label for="cityCountry" class="py-2">City/Country :</label>
+          <label for="email" class="py-2">Email :</label>
+          <label for="phonNum" class="py-2">Phone Number :</label>
+        </div>
+        <div class="flex flex-col gap-3 col-span-3">
+          <input type="text" class="py-2 bg-gray-200 w-full px-3" name="fullName">
+          <input type="text" class="py-2 bg-gray-200 w-full px-3" name="birthPlace">
+          <input type="number" class="py-2 bg-gray-200 w-full px-3" name="age">
+          <input type="text" class="py-2 bg-gray-200 w-full px-3" name="fullAddress">
+          <input type="text" class="py-2 bg-gray-200 w-full px-3" name="nationality">
+          <input type="text" class="py-2 bg-gray-200 w-full px-3" name="cityCountry">
+          <input type="email" class="py-2 bg-gray-200 w-full px-3" name="email">
+          <input type="tel" class="py-2 bg-gray-200 w-full px-3" name="phonNum">
+          <input type="submit" value="Submit" class="py-3 px-8 bg-[#78403e] text-xl font-semibold text-white cursor-pointer w-[40%] mx-auto">
+        </div>
+      </form>
+      <%- include("../common/footer.ejs")%>
+    </div>
+  </div>
+</body>
+
+</html>
